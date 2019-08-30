@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
-    <title>Cocktails</title>
-    <style>
-      .center {
+<template>
+<div>
+    <img src='https://ru.inshaker.com/uploads/billboard/promo/53/1565109005-banner_premia.jpg' alt="альтернативный текст" width="100%">
+<div class="desktop-header desktop"><a class="logo" href="/">
+  <img src="https://ru.inshaker.com/assets/common/logo-4bfdb85cfd6f55be4eeedd5b57c908c01806a711f88622a932aad9abb34fce11.svg"></a>
+  <div class="links"><a class="link" href="/">Тренды</a>
+    <a class="link" href="/missions">Миссии</a>
+    <a class="link" href="/user_barmen">Бармены</a>
+    <a class="link" href="/cocktails">Коктейли</a>
+    <a class="link" href="/goods">Ингредиенты</a>
+    </div> </div>
+     </div>
+</template>
+<script>
+  module.exports= {
+  data:function () {
+    return {
+    };
+  },
+};
+  </script>
+  <<style>
+  .center {
        width: 1050px; /* Ширина элемента в пикселах */
        padding: 10px; /* Поля вокруг текста */
        margin: auto; /* Выравниваем по центру */
@@ -81,19 +93,4 @@ body{
 a { 
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
    }
-     </style>
-  </head>
-  <body>
-    <header>	
-
-    </header><div class="filter"></div>
-        </div>
-    <noscript>
-      <strong>
-        We're sorry but this project doesn't work properly without JavaScript enabled.
-        Please enable it to continue.
-      </strong>
-    </noscript>
-    <div id="app"></div>
-  </body>
-</html>
+  </style>

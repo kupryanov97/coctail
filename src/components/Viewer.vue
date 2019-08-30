@@ -1,33 +1,7 @@
 <template class="template">
     <div class="center">
-      <div class="new-select-style-wpandyou">
-           <select :value="selected" @change="updateSelect"> 
-             <option>Любые</option> 
-             <option>kek</option>
-             <option>Безалкогольный</option>
-             <option>arbidol</option>
-           </select>
-           
-      </div>
-      <div class="color">
-           <select :value="color" @change="updateColor"> 
-             <option>Любые</option> 
-             <option>black</option>
-             <option>white</option>
-             <option>arbidol</option>
-           </select>
-      </div>
-      <div class="components">
-           <select :value="components" @change="updateComponents"> 
-             <option>Любые</option> 
-             <option>Лед в кубиках</option>
-             <option>Водка</option>
-             <option>Серебряная текила</option>
-             <option>Лаймовый сок</option>
-           </select>
-      </div>
       <div class="choosed">
-      <span>Выбрано:градус:{{value}}, цвет{{ color}}</span>
+      <testComponent></testComponent>
       </div>
       <div
         v-for="(item, index) in books"
@@ -69,14 +43,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { mapState } from 'vuex';
+import testComponent from '/home/oem/repo/cocktail/src/ArealFilter.vue';
 export default {
   data() {
     return {
-      selected:null,
-      color:null,
-      components: null,
+
     };
   },
   name: 'Main',
@@ -98,6 +69,9 @@ export default {
     getPagination() {
       return [50, { text: 'All', value: -1 }];
     },
+  },
+    components:{
+    testComponent
   },
   methods: {
     updateSelect (e) {

@@ -29,13 +29,13 @@ const store = new Vuex.Store({
       console.log(`Первый:${state.form} ,Цвет:${state.color} ,Содержит:${state.comp}`);
       if (state.comp.length !== undefined) {
         // eslint-disable-next-line no-unused-expressions
-        return state.list.filter(item => item.parts.includes(part => part.name === 'Водка'));
+        return state.list.filter(value => value.parts.includes(value.parts.forEach(part => { part.name === 'Лед в кубиках'; })));
       }
-      if (state.form === 'Любые' && state.color !== 'Любые') {
+      if (state.form === 'Любые' && state.color !== 'Любые' && state.color.length === undefined) {
         console.log('1');
         return state.temp.filter(item => item.color === state.color);
       }
-      if (state.color === 'Любые' && state.form !== 'Любые') {
+      if (state.color === 'Любые' && state.form !== 'Любые' && state.form.length === undefined) {
         console.log('2');
         return state.temp.filter(item => item.gradus === state.form);
       }
