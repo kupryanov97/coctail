@@ -31,11 +31,11 @@ const store = new Vuex.Store({
         // eslint-disable-next-line no-unused-expressions
         return state.list.filter(value => value.parts.includes(value.parts.forEach(part => { part.name === 'Лед в кубиках'; })));
       }
-      if (state.form === 'Любые' && state.color !== 'Любые' && state.color.length === undefined) {
+      if (state.form === 'Любые' && state.color !== 'Любые' && state.color.length !== undefined) {
         console.log('1');
         return state.temp.filter(item => item.color === state.color);
       }
-      if (state.color === 'Любые' && state.form !== 'Любые' && state.form.length === undefined) {
+      if (state.color === 'Любые' && state.form !== 'Любые' && state.form.length !== undefined) {
         console.log('2');
         return state.temp.filter(item => item.gradus === state.form);
       }
