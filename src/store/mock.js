@@ -4,7 +4,7 @@ export default [{
   src: '/uploads/cocktail/hires/408/icon_1557226534-Green-Fairy__highres.jpg',
   name: 'Зеленая фея',
   gradus: 'kek',
-  color: 'white',
+  color: 'black',
   parts: [
     {
       part: 93,
@@ -79,7 +79,8 @@ export default [{
   height: 238,
   src: '/uploads/cocktail/hires/38/icon_1556446318-mankhetten-image-final1.jpg',
   name: 'Манхэттен',
-  gradus: 'lol',
+  gradus: 'Безалкогольный',
+  color: 'white',
   parts: [
 
     {
@@ -381,7 +382,8 @@ export default [{
   height: 193,
   src: '/uploads/cocktail/hires/1086/icon_1556109201-com_800xmax.jpg',
   name: 'Пенициллин',
-  gradus: 'arbidol',
+  gradus: 'Безалкогольный',
+  color: 'white',
   parts: [
 
     {
@@ -427,7 +429,8 @@ export default [{
   height: 242,
   src: '/uploads/cocktail/hires/1386/icon_1556628013-Strawberry_daiquiry_800.jpg',
   name: 'Клубничный дайкири',
-  gradus: 'arbidol',
+  gradus: 'Безалкогольный',
+  color: 'white',
   parts: [
 
     {

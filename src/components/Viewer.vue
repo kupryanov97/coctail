@@ -7,6 +7,7 @@
              <option>Безалкогольный</option>
              <option>arbidol</option>
            </select>
+           
       </div>
       <div class="color">
            <select :value="color" @change="updateColor"> 
@@ -15,6 +16,18 @@
              <option>white</option>
              <option>arbidol</option>
            </select>
+      </div>
+      <div class="components">
+           <select :value="components" @change="updateComponents"> 
+             <option>Любые</option> 
+             <option>Лед в кубиках</option>
+             <option>Водка</option>
+             <option>Серебряная текила</option>
+             <option>Лаймовый сок</option>
+           </select>
+      </div>
+      <div class="choosed">
+      <span>Выбрано:градус:{{value}}, цвет{{ color}}</span>
       </div>
       <div
         v-for="(item, index) in books"
@@ -62,7 +75,8 @@ export default {
   data() {
     return {
       selected:null,
-      color:null
+      color:null,
+      components: null,
     };
   },
   name: 'Main',
@@ -73,6 +87,9 @@ export default {
       },
       set(value) {
         this.$store.commit('updateColor', value);
+      },
+      set(value) {
+        this.$store.commit('updateComponents', value);
       },
     },
     books() {
@@ -88,6 +105,9 @@ export default {
   },
   updateColor (e) {
     this.$store.commit('updateColor', e.target.value)
+  },
+  updateComponents (e) {
+    this.$store.commit('updateComponents', e.target.value)
   },
     getData() {
       console.log('getData');
@@ -131,6 +151,26 @@ hr {
   margin-top:-14% ;
 }
 .color {
+    margin-left:-366px ;
+  margin-top:5% ;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 240px;
+   }
+   .components select{
+  border-radius: 0;
+    background: transparent;
+    height: 44px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+  margin-top:-14% ;
+}
+.components {
     margin-left:-366px ;
   margin-top:5% ;
     border: 1px solid #CCC;
