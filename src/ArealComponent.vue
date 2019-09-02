@@ -32,7 +32,7 @@
                   :src="'https://ru.inshaker.com' + item.src"
                   :height="300"
                   :width= "95"
-                /> <br> <span>{{item.name}}</span>
+                /><div class="name-main"> <span>{{item.name}}</span></div>
                 </div>
           </section>
       </div>
@@ -67,6 +67,10 @@
 </script>
 
 <style>
+.name-main{
+ margin-top:5%;
+ margin-left:-30%; 
+}
 hr {
   border:none;
   border-top:2px dotted #f00;
@@ -77,82 +81,18 @@ hr {
 .lol {
     border-bottom: 3px dashed #eee;
 } 
-.new-select-style-wpandyou select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.color select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.color {
-    margin-left:-366px ;
-  margin-top:5% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
-   .components select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.components {
-    margin-left:-366px ;
-  margin-top:5% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
-   .search-result{
-    background: white;
-    overflow: hidden;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom: 3px dashed black;
-}
-.new-select-style-wpandyou {
-    margin-left:-366px ;
-  margin-top:0% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
+
 .center{
-  background: white;
+  background: green;
   width: 65%;
-  margin-top: -27.86%;
-  margin-left: 23%;
+  height: 100%;
+  margin-top: -26.86%;
+  margin-left: 22%;
 }
 .main1{
   margin-top: 29%;
   margin-left: -43%;
+  background: yellow;
 }
 .group, header, section, aside, footer {
     margin: 0 1.5% 24px 1.5%;
@@ -178,31 +118,36 @@ hr {
   height: 100%;
 }
 .main{
-  margin-top: -8%;
+  height: 10px;
+  margin-top:32%;
   margin-left: -18%;
   
+  
 }
-
+.main1{
+  height: 120px;
+  margin-top: -10%;
+  height: 300px;
+  margin-left: -35%;
+  background: #f00;
+}
 section {
-  margin-top: -40%;
+  margin-top: -32%;
     float: left;
     width: 260px;
-    height:400px;
+    
 }
 .aside {
-    margin-top: 27.1%;
+    margin-top: -70%;
     float: right;
     margin-left:60%;
-    height:500px;
+    height:100px;
     width: 900px;
     border-radius: 80px;
 }
 footer {
   clear: both;
   margin-bottom: 0;
-}
-.filter {
-  padding-left: 20px;
 }
 .cocktail-item-good {
   margin-top: 30px;
@@ -229,22 +174,27 @@ footer {
   position: left;
     display: block;
     margin-left:110% ;
-    margin-top:0% ;
+    margin-top:10% ;
     max-width: 100%;
     max-height: 310px;
     min-width: 20px;
     min-height: 20px;
     border-radius: 10px;
+    background: #ccc;
 }
 .size{
   display: block;
-  margin-top:-55%;
+  margin-top:-95%;
   margin-left:22%;
     max-width: 100%;
     max-height: 310px;
     min-width: 20px;
     min-height: 20px;
     border-radius: 6px;
+    background: #ccc;
 }
-
+.search-results{
+  margin-top:110%;
+  background: #ccc;
+}
 </style>

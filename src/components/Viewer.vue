@@ -1,15 +1,17 @@
 <template class="template">
+<div> <Header></Header>
     <div class="center">
       <div class="choosed">
-      <testComponent></testComponent> <Component111></Component111>
+    <testComponent></testComponent> <Component111></Component111>
       </div>
      
+    </div>
     </div>
 </template>
 
 <script>
 import testComponent from '/home/oem/repo/cocktail/src/ArealFilter.vue';
-import Header from '/home/oem/repo/cocktail/src/ArealFilter.vue';
+import Header from '/home/oem/repo/cocktail/src/ArealHeader.vue';
 import Component111 from '/home/oem/repo/cocktail/src/ArealComponent.vue';
 export default {
   data() {
@@ -39,7 +41,8 @@ export default {
   },
     components:{
     testComponent,
-    Component111
+    Component111,
+    Header
   },
   methods: {
     updateSelect (e) {
@@ -67,95 +70,9 @@ hr {
   background-color:#fff;
   height:1px;
 }
-.lol {
-    border-bottom: 3px dashed #eee;
-} 
-.new-select-style-wpandyou select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.color select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.color {
-    margin-left:-366px ;
-  margin-top:5% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
-   .components select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.components {
-    margin-left:-366px ;
-  margin-top:5% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
-   .search-result{
-    background: white;
-    overflow: hidden;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom: 3px dashed black;
-}
-.new-select-style-wpandyou {
-    margin-left:-366px ;
-  margin-top:0% ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   } 
-.group, header, section, aside, footer {
-    margin: 0 1.5% 24px 1.5%;
-  display: list-item inline;
-  font: 17px/27px "Source Code Pro", Inconsolata, "Lucida Console",
-  Terminal, "Courier New", Courier;
-  text-align: center;
-}
-.line {
-    margin-left: -35%;
-}
 .application--wrap{
   background-image: url("https://ru.inshaker.com/assets/common/body-bg-bf9928ee232a5a485e2d840111ee4bb2b7affb0509ecc283e6c81d4956ca3038.jpg");
   height: 100%;
-}
-section {
-  margin-top: -40%;
-    float: left;
-    width: 260px;
-    height:400px;
 }
 
 footer {

@@ -26,6 +26,7 @@
              <option>Лаймовый сок</option>
            </select>
       </div>
+      <div class="button1"><button v-on:click="clearSelect">  Очистить</button></div>
       </div>
 </template>
 
@@ -33,7 +34,8 @@
   module.exports= {
   data:function () {
     return {
-              selected:null,
+      counter:0,
+      selected:null,
       color:null,
       components: null,
     };
@@ -41,6 +43,11 @@
   methods: {
     updateSelect (e) {
     this.$store.commit('updateSelect', e.target.value)
+  },
+  clearSelect (e) {
+    e.target.value='Любые'
+    selected='Любые';color='Любые';components='Любые'
+    this.$store.commit('clearSelect', e.target.value)
   },
   updateColor (e) {
     this.$store.commit('updateColor', e.target.value)
@@ -51,3 +58,83 @@
   },
 };
   </script>
+<style>
+.button1{
+  background: red;
+  width: 100px;
+  font: 18px/27px "Times New Roman";
+  line-height:29px;
+  text-align: center;
+  height: 24px;
+  margin-left:-24%;
+  margin-top: 20px;
+}
+.new-select-style-wpandyou select{
+  border-radius: 0;
+    background: transparent;
+    height: 44px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+  margin-top:-24% ;
+}
+.color select{
+    border-radius: 0;
+    background: transparent;
+    height: 44px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+  margin-top:-14% ;
+}
+.color {
+    margin-left:-366px ;
+  margin-top:5% ;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 240px;
+   }
+   .components select{
+  border-radius: 0;
+    background: transparent;
+    height: 44px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+  margin-top:-14% ;
+}
+.components {
+    margin-left:-366px ;
+  margin-top:5% ;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 240px;
+   }
+   .search-result{
+     height: 100px;
+    background: white;
+    overflow: hidden;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom: 3px dashed black;
+}
+.new-select-style-wpandyou {
+    margin-left:-366px ;
+  margin-top:-100px ;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 240px;
+   }
+</style>

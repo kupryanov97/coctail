@@ -23,14 +23,16 @@ const store = new Vuex.Store({
     updateComponents(state, message2) {
       state.comp = message2;
     },
+    clearSelect(state, message) {
+      state.form = message;
+      state.color = message;
+    },
   },
   getters: {
     list: state => {
+      state.list = state.temp;
       console.log(`Первый:${state.form} ,Цвет:${state.color} ,Содержит:${state.comp}`);
-      if (state.comp.length !== undefined) {
-        // eslint-disable-next-line no-unused-expressions
-        return state.list.filter(value => value.parts.includes(value.parts.forEach(part => { part.name === 'Лед в кубиках'; })));
-      }
+
       if (state.form === 'Любые' && state.color !== 'Любые' && state.color.length !== undefined) {
         console.log('1');
         return state.temp.filter(item => item.color === state.color);
