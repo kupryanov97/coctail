@@ -1,72 +1,93 @@
   <template>
-  <div>
+  <div class="filter1">
   <div class="new-select-style-wpandyou">
-           <select :value="selected" @change="updateSelect"> 
-             <option>Любые</option> 
+           <select :value="selected" @change="updateSelect">
+             <option>Любые</option>
              <option>kek</option>
              <option>Безалкогольный</option>
              <option>arbidol</option>
            </select>
-           
+
       </div>
       <div class="color">
-           <select :value="color" @change="updateColor"> 
-             <option>Любые</option> 
+           <select :value="color" @change="updateColor">
+             <option>Любые</option>
              <option>black</option>
              <option>white</option>
              <option>arbidol</option>
            </select>
       </div>
       <div class="components">
-           <select :value="components" @change="updateComponents"> 
-             <option>Любые</option> 
+           <select :value="components" @change="updateComponents">
+             <option>Любые</option>
              <option>Лед в кубиках</option>
              <option>Водка</option>
              <option>Серебряная текила</option>
              <option>Лаймовый сок</option>
+             <option>Бурбон</option>
+              <option>Абсент</option>
+              <option>Энергетик</option>
+              <option>Коктейльная вишня красная</option>
+              <option>Ананас</option>
            </select>
       </div>
-      <div class="button1"><button v-on:click="clearSelect">  Очистить</button></div>
+      <div class="button1"><button class="b1" v-on:click="clearSelect">  Очистить</button>
+      <p>Выбрано:{{selected}}</p>
+      </div>
       </div>
 </template>
 
 <script>
-  module.exports= {
-  data:function () {
+module.exports = {
+  data() {
     return {
-      counter:0,
-      selected:null,
-      color:null,
-      components: null,
+      counter: 0,
+      selected: null,
+      color: null,
+      components: '',
     };
   },
   methods: {
-    updateSelect (e) {
-    this.$store.commit('updateSelect', e.target.value)
-  },
-  clearSelect (e) {
-    e.target.value='Любые'
-    selected='Любые';color='Любые';components='Любые'
-    this.$store.commit('clearSelect', e.target.value)
-  },
-  updateColor (e) {
-    this.$store.commit('updateColor', e.target.value)
-  },
-  updateComponents (e) {
-    this.$store.commit('updateComponents', e.target.value)
-  },
+    updateSelect(e) {
+      this.$store.commit('updateSelect', e.target.value);
+    },
+    clearSelect(e) {
+      e.target.value = 'Любые';
+      selected = 'Любые'; color = 'Любые'; components = 'Любые';
+      this.$store.commit('updateColor', e.target.value);
+      this.$store.commit('updateComponents', e.target.value);
+      this.$store.commit('updateSelect', e.target.value);
+      
+    },
+    updateColor(e) {
+      this.$store.commit('updateColor', e.target.value);
+    },
+    updateComponents(e) {
+      
+      this.$store.commit('updateComponents', e.target.value);
+    },
   },
 };
-  </script>
+</script>
 <style>
+.b1 {
+    background: -moz-linear-gradient(#00BBD6, #EBFFFF);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+    padding: 3px 7px;
+    color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+   }
 .button1{
-  background: red;
-  width: 100px;
+  width: 150px;
   font: 18px/27px "Times New Roman";
   line-height:29px;
   text-align: center;
-  height: 24px;
-  margin-left:-24%;
+  height: 154px;
+  margin-left:-27%;
   margin-top: 20px;
 }
 .new-select-style-wpandyou select{

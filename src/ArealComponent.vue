@@ -1,13 +1,10 @@
 <template class="template">
     <div class="center">
-      <div class="choosed">
-      </div>
-      <div
+      <div class="idkname"
         v-for="(item, index) in books"
         :key="index"
       >
       <div class="main">
-        <div class="search-results">
             <div class="aside">
               <a>
                 <div class="cocktail-item-good"
@@ -22,7 +19,7 @@
                   />
                      <div class="name"><br><span>{{part.name}}</span><br>
                      <div class="line"></div>
-                    </div> 
+                    </div>
                 </div>
              </a>
      </div>
@@ -31,19 +28,18 @@
               <img class="size"
                   :src="'https://ru.inshaker.com' + item.src"
                   :height="300"
-                  :width= "95"
                 /><div class="name-main"> <span>{{item.name}}</span></div>
+                <div class="noname"></div>
                 </div>
           </section>
-      </div>
       </div>
       </div>
     </div>
 </template>
 
 <script>
-  module.exports= {
-  data:function () {
+module.exports = {
+  data() {
     return {
 
     };
@@ -51,7 +47,7 @@
   name: 'Main',
   computed: {
     books() {
-        return this.$store.getters.list
+      return this.$store.getters.list;
     },
     getPagination() {
       return [50, { text: 'All', value: -1 }];
@@ -67,9 +63,14 @@
 </script>
 
 <style>
+.idkname{
+  background: #f00;
+  height: 0px;
+}
 .name-main{
- margin-top:5%;
- margin-left:-30%; 
+ margin-top:20%;
+ margin-left:auto;
+ 
 }
 hr {
   border:none;
@@ -77,22 +78,27 @@ hr {
   color:#fff;
   background-color:#fff;
   height:1px;
+  
 }
-.lol {
+.noname {
     border-bottom: 3px dashed #eee;
-} 
+    margin-top: 100%;
+    width:1200px;
+    margin-left: -70%;
+    
+}
 
 .center{
-  background: green;
+  background: white;
   width: 65%;
   height: 100%;
-  margin-top: -26.86%;
+  margin-top: 6.86%;
   margin-left: 22%;
 }
 .main1{
   margin-top: 29%;
   margin-left: -43%;
-  background: yellow;
+  background: white;
 }
 .group, header, section, aside, footer {
     margin: 0 1.5% 24px 1.5%;
@@ -100,10 +106,9 @@ hr {
   font: 17px/27px "Source Code Pro", Inconsolata, "Lucida Console",
   Terminal, "Courier New", Courier;
   text-align: center;
+  
 }
-.line {
-    margin-left: -35%;
-}
+
 .name {
   font: 13px/27px "Times New Roman";
   line-height:29px;
@@ -115,32 +120,34 @@ hr {
 }
 .application--wrap{
   background-image: url("https://ru.inshaker.com/assets/common/body-bg-bf9928ee232a5a485e2d840111ee4bb2b7affb0509ecc283e6c81d4956ca3038.jpg");
-  height: 100%;
+  height: auto;
+  background-repeat: repeat-y;
 }
 .main{
-  height: 10px;
-  margin-top:32%;
+  height: 1%;
+  margin-top:122%;
   margin-left: -18%;
-  
-  
+background-attachment: blue;
+
 }
 .main1{
-  height: 120px;
-  margin-top: -10%;
+  width: 120px;
+  margin-top: -370%;
   height: 300px;
-  margin-left: -35%;
-  background: #f00;
+  margin-left: -15%;
+  background: white;
 }
 section {
-  margin-top: -32%;
+  background-attachment: blue;
+  margin-top: -42%;
     float: left;
     width: 260px;
-    
+
 }
 .aside {
-    margin-top: -70%;
+    margin-top: -145%;
     float: right;
-    margin-left:60%;
+    margin-left:0%;
     height:100px;
     width: 900px;
     border-radius: 80px;
@@ -151,15 +158,16 @@ footer {
 }
 .cocktail-item-good {
   margin-top: 30px;
-  
+
     position: relative;
     display: inline-block;
     vertical-align: top;
     height: auto;
+
 }
 .cocktail-item-good:before {
     position: absolute;
-    left: 83%;
+    left: 89.5%;
     top: 20%;
     font-size: 34px;
     content: '  +  ';
@@ -170,6 +178,7 @@ footer {
     content: '=';
 }
 .image{
+  width: 100px;
   height: auto;
   position: left;
     display: block;
@@ -192,8 +201,11 @@ footer {
     min-height: 20px;
     border-radius: 6px;
     background: #ccc;
+    width: 100px;
 }
 .search-results{
+  width: 100px;
+  
   margin-top:110%;
   background: #ccc;
 }
