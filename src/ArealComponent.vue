@@ -18,22 +18,19 @@
                   :height="78"
                   />
                      <div class="name"><br><span>{{part.name}}</span><br>
-                     <div class="line"></div>
                     </div>
                 </div>
              </a>
      </div>
               <section>
-                <div class="main1">
               <img class="size"
                   :src="'https://ru.inshaker.com' + item.src"
-                  :height="300"
+                  :height="279"
                 /><div class="name-main"> <span>{{item.name}}</span></div>
-                <div class="noname"></div>
-                </div>
+
           </section>
       </div>
-      </div>
+      </div><div class="noname"></div>
     </div>
 </template>
 
@@ -64,13 +61,19 @@ module.exports = {
 
 <style>
 .idkname{
+  border-radius: 80px;
   background: #f00;
-  height: 0px;
+  height: 0;
 }
+
 .name-main{
  margin-top:20%;
- margin-left:auto;
- 
+ margin-left:12%;
+ line-height:20px;
+ width:120px;
+ font: 15px/27px "Times New Roman";
+  line-height:29px;
+  text-align: center;
 }
 hr {
   border:none;
@@ -78,45 +81,37 @@ hr {
   color:#fff;
   background-color:#fff;
   height:1px;
-  
+
 }
 .noname {
-    border-bottom: 3px dashed #eee;
+    border-bottom: 1px dashed #ccc;
     margin-top: 100%;
-    width:1200px;
-    margin-left: -70%;
-    
+    width:1230px;
+    height: auto;
+    margin-left: -33.5%;
+
 }
 
 .center{
   background: white;
   width: 65%;
   height: 100%;
-  margin-top: 6.86%;
+  margin-top: 3.86%;
   margin-left: 22%;
-}
-.main1{
-  margin-top: 29%;
-  margin-left: -43%;
-  background: white;
-}
-.group, header, section, aside, footer {
-    margin: 0 1.5% 24px 1.5%;
-  display: list-item inline;
-  font: 17px/27px "Source Code Pro", Inconsolata, "Lucida Console",
-  Terminal, "Courier New", Courier;
-  text-align: center;
-  
 }
 
 .name {
   font: 13px/27px "Times New Roman";
   line-height:29px;
   text-align: center;
-  margin-top: -19%;
+  margin-top: -17%;
   margin-left: 91%;
     width: 140px;
     height:35px;
+}
+span {
+  color: black !important;
+  font-family: PT Sans, Arial, Tahoma, sans-serif;
 }
 .application--wrap{
   background-image: url("https://ru.inshaker.com/assets/common/body-bg-bf9928ee232a5a485e2d840111ee4bb2b7affb0509ecc283e6c81d4956ca3038.jpg");
@@ -124,33 +119,35 @@ hr {
   background-repeat: repeat-y;
 }
 .main{
-  height: 1%;
-  margin-top:122%;
+  line-height:80px;
+  height: auto;
+  margin-top:-102%;
   margin-left: -18%;
-background-attachment: blue;
+background: blue;
 
 }
 .main1{
   width: 120px;
-  margin-top: -370%;
+  margin-top: 170%;
   height: 300px;
   margin-left: -15%;
   background: white;
 }
 section {
-  background-attachment: blue;
-  margin-top: -42%;
+  margin-top: 1%;
     float: left;
-    width: 260px;
+    height: auto;
 
 }
 .aside {
-    margin-top: -145%;
+  display: flex;
+    margin-top: 10%;
     float: right;
     margin-left:0%;
     height:100px;
     width: 900px;
     border-radius: 80px;
+    background: white
 }
 footer {
   clear: both;
@@ -193,7 +190,7 @@ footer {
 }
 .size{
   display: block;
-  margin-top:-95%;
+  margin-top:-60%;
   margin-left:22%;
     max-width: 100%;
     max-height: 310px;
@@ -205,7 +202,6 @@ footer {
 }
 .search-results{
   width: 100px;
-  
   margin-top:110%;
   background: #ccc;
 }

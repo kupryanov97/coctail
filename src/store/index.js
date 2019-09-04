@@ -6,13 +6,14 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    list: mock.slice(0, 10),
+    list: mock.slice(0, 50),
     form: { message: '' },
     color: { message1: '' },
     comp: { message2: '' },
-    temp: mock.slice(0, 10),
-    yac: 0,
+    temp: mock.slice(0, 50),
+    yac: [],
     temp1: [],
+    empty: '',
   },
   mutations: {
     updateSelect(state, message) {
@@ -24,7 +25,12 @@ const store = new Vuex.Store({
     updateComponents(state, message2) {
       if (message2 !== 'Любые') {
         state.temp1.push(message2);
-      } else state.comp = 'Любые';
+        console.log(`temp1:${state.temp1}`);
+        state.comp = '';
+      } else {
+        state.comp = 'Любые';
+        state.temp1 = [];
+      }
     },
     clearSelect(state, message) {
       state.comp = message;
@@ -34,6 +40,7 @@ const store = new Vuex.Store({
   },
   getters: {
     list: state => {
+      state.list = state.temp;
       if (state.form === 'Любые' && state.color !== 'Любые' && state.color.length !== undefined) {
         console.log('1');
         state.list = state.list.filter(item => item.color === state.color);
@@ -50,7 +57,8 @@ const store = new Vuex.Store({
 
       if (state.form.length === undefined && state.color.length === undefined
          && state.temp1.length === 0) {
-        console.log(state.temp1);
+        console.log('4');
+        console.log(state.temp1.length);
         return state.temp;
       }
 
@@ -66,10 +74,16 @@ const store = new Vuex.Store({
         state.list = state.list.filter(item => {
           const partNames = item.parts.map(part => part.name);
 
-          console.log('iterate', partNames, state.temp1);
+
           return state.temp1.every(filter => partNames.includes(filter));
         });
       }
+      console.log('33');
+      if (state.list.length === 0) {
+        alert('По вашему запросу ничего нейдено');
+        return state.temp;
+      }
+      state.empty = state.list;
       return state.list;
     },
   },

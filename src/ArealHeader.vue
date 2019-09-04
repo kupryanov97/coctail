@@ -6,8 +6,8 @@
     <a class="link" href="/missions">Миссии</a>
     <a class="link" href="/user_barmen">Бармены</a>
     <a class="link" href="/cocktails">Коктейли</a>
-    <a class="link" href="/goods">Ингредиенты</a></div> 
-    </div>
+    <a class="link" href="/goods">Ингредиенты</a></div>
+    </div><div class="filter"></div>
     <noscript>
       <strong>
         We're sorry but this project doesn't work properly without JavaScript enabled.
@@ -30,15 +30,18 @@ module.exports = {
     flex-grow: 1;
 }
 .filter {
-    width: 26.98%;
-    height: 570px;
-    margin-left:135%;
-    margin-top:-1%;
-    background: black;
+    width: 16.98%;
+    height: 420px;
+    margin-left:0.9%;
+    margin-top:0%;
+    background: #ccc;
     font-size: 18px;
+    border-radius: 10px;
+    position: fixed;
+
 }
 .link {
-    font-size: 18px;
+        font-size: 18px;
     font-weight: bold;
     color: white;
     text-shadow: 0 1px 0 #000, 0 1px 0 rgba(0,0,0,0.5);
@@ -50,7 +53,7 @@ module.exports = {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 201px;
 }
 .logo {
     margin-left: 25px;
@@ -60,15 +63,17 @@ module.exports = {
 }
 .desktop-header {
     z-index: 500;
-    width: 100.2%;
     height: 70px;
-    margin: -0.2% -1.2% 0px;
-    background: #8B0000;
+    margin: 0 0 25px;
+    background: #1b2326;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 18px;
 }
-a {
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-   }
+body{
+  background-image: url("https://ru.inshaker.com/assets/common/body-bg-bf9928ee232a5a485e2d840111ee4bb2b7affb0509ecc283e6c81d4956ca3038.jpg");
+  height: auto;
+  background-repeat: repeat-y;
+}
   </style>

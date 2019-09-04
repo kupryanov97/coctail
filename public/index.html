@@ -41,10 +41,98 @@
     display: flex;
     align-items: center;
 }
+#footer .groups {
+    padding: 39px 0 20px;
+    border-bottom: 2px solid #1d1d1e;
+}
+.mobile {
+    display: none !important;
+}
+#footer .title {
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+#footer .groups {
+    padding: 39px 0 20px;
+    border-bottom: 2px solid #1d1d1e;
+}
 
-a { 
-    text-decoration: none; /* Отменяем подчеркивание у ссылки */
-   }
+#footer .languages, #footer .groups {
+    display: flex;
+    justify-content: space-between;
+}
+#footer .groups, #footer .bottom {
+    width: 960px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+div {
+    display: block;
+}
+#footer {
+    color: white;
+    font-size: 15px;
+    border-top: 1px solid rgba(197,197,197,0.15);
+    box-shadow: 0 1px 20px black;
+    background:black;
+    margin-top: 55px;
+}
+#footer .bottom {
+    padding: 18px 0 21px;
+}
+#footer span {
+    display: block;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+#footer a {
+    display: block;
+    margin-bottom: 14px;
+}
+a {
+    color: white !important;
+    text-decoration: none;
+    outline: 0; text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+html {
+    height: 100%;
+    font-family: PT Sans, Arial, Tahoma, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
+    overflow-x: hidden;
+}
+#footer .languages>.group {
+    padding: 0 30px;
+}
+#footer .empty {
+    height: 35px;
+}
+#footer span {
+    display: block;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+#footer img {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin-right: 12px;
+}
+* {
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
      </style>
   </head>
     <img src='https://ru.inshaker.com/uploads/billboard/promo/53/1565109005-banner_premia.jpg' alt="альтернативный текст" width="100%">
@@ -55,5 +143,6 @@ a {
         Please enable it to continue.
       </strong>
     </noscript>
-    <div id="app"></div>
+    <body><div id="app"></div></body>
+
 </html>
