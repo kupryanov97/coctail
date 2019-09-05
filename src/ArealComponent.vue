@@ -14,8 +14,8 @@
                 <img class="image"
                   :src="'https://ru.inshaker.com' + part.src"
                   :title="part.name"
-                  :width="78"
-                  :height="78"
+                  :width="68"
+                  :height="68"
                   />
                      <div class="name"><br><span>{{part.name}}</span><br>
                     </div>
@@ -23,10 +23,11 @@
              </a>
      </div>
               <section>
-              <img class="size"
+            <a href="https://ru.inshaker.com/cocktails/408-zelenaya-feya">  <img class="size"
                   :src="'https://ru.inshaker.com' + item.src"
                   :height="279"
-                /><div class="name-main"> <span>{{item.name}}</span></div>
+                />
+                </a><div class="name-main"> <span>{{item.name}}</span></div>
 
           </section>
       </div>
@@ -93,6 +94,7 @@ hr {
 }
 
 .center{
+
   background: white;
   width: 65%;
   height: 100%;
@@ -146,7 +148,7 @@ section {
     margin-left:0%;
     height:100px;
     width: 900px;
-    border-radius: 80px;
+
     background: white
 }
 footer {
@@ -190,7 +192,7 @@ footer {
 }
 .size{
   display: block;
-  margin-top:-60%;
+  margin-top:-60.1%;
   margin-left:22%;
     max-width: 100%;
     max-height: 310px;

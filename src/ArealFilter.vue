@@ -1,38 +1,38 @@
   <template>
   <div class="filters">
-  <div class="new-select-style-wpandyou">
-           <select :value="selected" @change="updateSelect">
-             <option>Любые</option>
-             <option>kek</option>
-             <option>Безалкогольный</option>
-             <option>arbidol</option>
-           </select>
+      <div class="new-select-style-wpandyou">
+              <select :value="selected" @change="updateSelect">
+                <option>Любые</option>
+                <option>kek</option>
+                <option>Безалкогольный</option>
+                <option>arbidol</option>
+              </select>
 
-      </div>
-      <div class="color">
-           <select :value="color" @change="updateColor">
-             <option>Любые</option>
-             <option>black</option>
-             <option>white</option>
-             <option>arbidol</option>
-           </select>
-      </div>
-      <div class="components">
-           <select :value="components" @change="updateComponents">
-             <option>Любые</option>
-             <option>Лед в кубиках</option>
-             <option>Водка</option>
-             <option>Серебряная текила</option>
-             <option>Лаймовый сок</option>
-             <option>Бурбон</option>
-              <option>Абсент</option>
-              <option>Энергетик</option>
-              <option>Коктейльная вишня красная</option>
-              <option>Ананас</option>
-           </select>
-      </div>
-      <div class="button1"><button class="b1"  v-on:click="clearSelect">  Очистить</button>
-      </div>
+          </div>
+          <div class="color">
+              <select :value="color" @change="updateColor">
+                <option>Любые</option>
+                <option>black</option>
+                <option>white</option>
+                <option>arbidol</option>
+              </select>
+          </div>
+          <div class="color">
+              <select :value="components" @change="updateComponents">
+                <option>Любые</option>
+                <option>Лед в кубиках</option>
+                <option>Водка</option>
+                <option>Серебряная текила</option>
+                <option>Лаймовый сок</option>
+                <option>Бурбон</option>
+                <option>Абсент</option>
+                <option>Энергетик</option>
+                <option>Коктейльная вишня красная</option>
+                <option>Ананас</option>
+              </select>
+          </div>
+          <div class="button1"><button class="b1"  v-on:click="clearSelect">  Очистить</button>
+          </div>
       </div>
 </template>
 
@@ -40,10 +40,9 @@
 module.exports = {
   data() {
     return {
-      counter: 0,
       selected: null,
       color: null,
-      components: '',
+      components: null,
     };
   },
   methods: {
@@ -52,6 +51,9 @@ module.exports = {
     },
     clearSelect(e) {
       e.target.value = 'Любые';
+      this.selected = e.target.value;
+      this.color = e.target.value;
+      this.components = e.target.value;
       this.$store.commit('updateColor', e.target.value);
       this.$store.commit('updateSelect', e.target.value);
       this.$store.commit('updateComponents', e.target.value);
@@ -72,18 +74,18 @@ module.exports = {
 .filters{
   position: fixed;
   z-index: 0;
-  margin-left:22%;
-  margin-top:9%;
+  margin-left:27%;
+  margin-top:8.7%;
 }
 .b1 {
-    background: -moz-linear-gradient(#00BBD6, #EBFFFF);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    background: -moz-linear-gradient(rgb(227, 255, 69), #EBFFFF);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
     padding: 3px 7px;
     color: #333;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 50px;
     border: 1px solid #666;
    }
 .button1{
@@ -92,7 +94,7 @@ module.exports = {
   line-height:29px;
   text-align: center;
   height: 154px;
-  margin-left:-207%;
+  margin-left:-249%;
   margin-top: 20px;
 }
 .new-select-style-wpandyou select{
@@ -119,36 +121,13 @@ module.exports = {
 }
 .color {
     margin-left:-366px ;
-  margin-top:5% ;
+  margin-top:22% ;
     height: 42px;
-    line-height: 42px;
-    color: #777777;
-    font-size: 17px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
-   }
-   .components select{
-  border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.components {
-    margin-left:-366px ;
-  margin-top:5% ;
     border: 1px solid #CCC;
     overflow: hidden;
     height: 34px;
     background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
+    width: 180px;
    }
    .search-result{
      height: 100px;
@@ -165,6 +144,6 @@ module.exports = {
     overflow: hidden;
     height: 34px;
     background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 240px;
+    width: 180px;
    }
 </style>

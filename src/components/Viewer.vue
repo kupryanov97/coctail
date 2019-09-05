@@ -1,17 +1,13 @@
 <template class="template">
-<div> <Header></Header><testComponent></testComponent>
+<div> <Header></Header><ArealFilter></ArealFilter>
       <div class="component">
-    <Component111></Component111> 
+    <Component111></Component111>
     </div>
     <ArealFooter></ArealFooter>
     </div>
 </template>
 
 <script>
-import testComponent from '/home/oem/repo/cocktail/src/ArealFilter.vue';
-import Header from '/home/oem/repo/cocktail/src/ArealHeader.vue';
-import Component111 from '/home/oem/repo/cocktail/src/ArealComponent.vue';
-import ArealFooter from '/home/oem/repo/cocktail/src/ArealFooter.vue';
 
 export default {
   data() {
@@ -29,10 +25,10 @@ export default {
     },
   },
   components: {
-    testComponent,
-    Component111,
-    Header,
-    ArealFooter,
+    ArealFilter: () => import('/home/oem/repo/cocktail/src/ArealFilter.vue'),
+    Header: () => import('/home/oem/repo/cocktail/src/ArealHeader.vue'),
+    Component111: () => import('/home/oem/repo/cocktail/src/ArealComponent.vue'),
+    ArealFooter: () => import('/home/oem/repo/cocktail/src/ArealFooter.vue'),
   },
   methods: {
     getData() {
