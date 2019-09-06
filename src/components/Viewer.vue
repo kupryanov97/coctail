@@ -1,40 +1,29 @@
 <template class="template">
-<div> <Header></Header><ArealFilter></ArealFilter>
+<div> <ArealHeader></ArealHeader><ArealFilter></ArealFilter>
       <div class="component">
-    <Component111></Component111>
+    <ArealComponent></ArealComponent>
     </div>
     <ArealFooter></ArealFooter>
     </div>
 </template>
 
 <script>
+import ArealFilter from './ArealFilter.vue';
+import ArealHeader from './ArealHeader.vue';
+import ArealComponent from './ArealComponent.vue';
+import ArealFooter from './ArealFooter.vue';
 
 export default {
   data() {
     return {
-
     };
   },
   name: 'Main',
-  computed: {
-    books() {
-      return this.$store.getters.list;
-    },
-    getPagination() {
-      return [50, { text: 'All', value: -1 }];
-    },
-  },
   components: {
-    ArealFilter: () => import('/home/oem/repo/cocktail/src/ArealFilter.vue'),
-    Header: () => import('/home/oem/repo/cocktail/src/ArealHeader.vue'),
-    Component111: () => import('/home/oem/repo/cocktail/src/ArealComponent.vue'),
-    ArealFooter: () => import('/home/oem/repo/cocktail/src/ArealFooter.vue'),
-  },
-  methods: {
-    getData() {
-      console.log('getData');
-      return this.$store.dispatch('getDataa');
-    },
+    ArealFilter,
+    ArealHeader,
+    ArealComponent,
+    ArealFooter,
   },
 };
 </script>
@@ -55,10 +44,10 @@ export default {
 }
 div.component{
   border-radius: 10px;
-  width: 65%;
+  width: 55%;
 overflow:auto;
   margin-top: 1.86%;
-  margin-left: 22%;
+  margin-left: 24%;
   background: white
 }
 .choosed{

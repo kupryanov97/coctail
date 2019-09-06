@@ -1,37 +1,30 @@
 <template class="template">
     <div class="center">
-      <div class="idkname"
-        v-for="(item, index) in books"
-        :key="index"
-      >
-      <div class="main">
-            <div class="aside">
-              <a>
-                <div class="cocktail-item-good"
-                  v-for="(part) in item.parts"
-                  :key="part.part"
-                >
-                <img class="image"
-                  :src="'https://ru.inshaker.com' + part.src"
-                  :title="part.name"
-                  :width="68"
-                  :height="68"
-                  />
-                     <div class="name"><br><span>{{part.name}}</span><br>
-                    </div>
-                </div>
-             </a>
-     </div>
-              <section>
-            <a href="https://ru.inshaker.com/cocktails/408-zelenaya-feya">  <img class="size"
-                  :src="'https://ru.inshaker.com' + item.src"
-                  :height="279"
-                />
-                </a><div class="name-main"> <span>{{item.name}}</span></div>
-
-          </section>
-      </div>
-      </div><div class="noname"></div>
+          <div class="idkname"
+            v-for="(item, index) in cocktails"
+            :key="index">
+              <div class="main">
+                    <div class="aside">
+                      <a>
+                        <div class="cocktail-item-good"
+                          v-for="(part) in item.parts"
+                          :key="part.part">
+                            <img class="image"
+                              :src="'https://ru.inshaker.com' + part.src"
+                              :title="part.name"
+                              :width="68"
+                              :height="68"/>
+                            <div class="name"><br><span>{{part.name}}</span><br>
+                            </div>
+                        </div>
+                     </a>
+                   </div>
+                   <section>
+                     <img class="size" :src="'https://ru.inshaker.com' + item.src" :height="279"/>
+                     <div class="name-main"> <span>{{item.name}}</span></div>
+                  </section>
+              </div>
+          </div>
     </div>
 </template>
 
@@ -39,22 +32,12 @@
 module.exports = {
   data() {
     return {
-
     };
   },
   name: 'Main',
   computed: {
-    books() {
+    cocktails() {
       return this.$store.getters.list;
-    },
-    getPagination() {
-      return [50, { text: 'All', value: -1 }];
-    },
-  },
-  methods: {
-    getData() {
-      console.log('getData');
-      return this.$store.dispatch('getData');
     },
   },
 };
@@ -68,13 +51,15 @@ module.exports = {
 }
 
 .name-main{
- margin-top:20%;
- margin-left:12%;
+ margin-top:29%;
+ margin-left:0%;
  line-height:20px;
  width:120px;
- font: 15px/27px "Times New Roman";
+ font: 17px/27px;
   line-height:29px;
+  font-style: italic;
   text-align: center;
+  background: white;
 }
 hr {
   border:none;
@@ -136,18 +121,21 @@ background: blue;
   background: white;
 }
 section {
-  margin-top: 1%;
+  margin-top: 5%;
     float: left;
     height: auto;
-
+    width: 17%;
+background: white;
 }
 .aside {
   display: flex;
+  align-items: left;
+  justify-content: left;
     margin-top: 10%;
     float: right;
     margin-left:0%;
     height:100px;
-    width: 900px;
+    width: 95%;
 
     background: white
 }
@@ -193,14 +181,14 @@ footer {
 .size{
   display: block;
   margin-top:-60.1%;
-  margin-left:22%;
+  margin-left:2%;
     max-width: 100%;
     max-height: 310px;
     min-width: 20px;
     min-height: 20px;
     border-radius: 6px;
     background: #ccc;
-    width: 100px;
+    float: center;
 }
 .search-results{
   width: 100px;

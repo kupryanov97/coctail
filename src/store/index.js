@@ -7,9 +7,9 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     list: mock.slice(0, 50),
-    vol: { message: '' },
-    color: { message1: '' },
-    comp: { message2: '' },
+    vol: 'Любые',
+    color: { message1: 'Любые' },
+    comp: { message2: 'Любые' },
     temp: mock.slice(0, 50),
     yac: [],
     temp1: [],
@@ -25,7 +25,6 @@ const store = new Vuex.Store({
     updateComponents(state, message2) {
       if (message2 !== 'Любые') {
         state.temp1.push(message2);
-        console.log(`temp1:${state.temp1}`);
         state.comp = '';
       } else {
         state.comp = 'Любые';
@@ -33,9 +32,9 @@ const store = new Vuex.Store({
       }
     },
     clearSelect(state, message) {
-      state.comp = message;
-      state.color = message;
-      state.vol = message;
+      state.comp = 'Любые';
+      state.color = 'Любые';
+      state.vol = 'Любые';
     },
   },
   getters: {
@@ -80,9 +79,10 @@ const store = new Vuex.Store({
       }
       console.log('33');
       if (state.list.length === 0) {
-        alert('По вашему запросу ничего нейдено');
+        // alert('По вашему запросу ничего нейдено');
         return state.temp;
       }
+      // alert(`найдено:${state.list.length} рецептов`);
       state.empty = state.list;
       return state.list;
     },

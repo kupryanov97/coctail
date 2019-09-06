@@ -1,62 +1,73 @@
-  <template>
-  <div class="filters">
-      <div class="new-select-style-wpandyou">
-              <select :value="selected" @change="updateSelect">
-                <option>Любые</option>
-                <option>kek</option>
-                <option>Безалкогольный</option>
-                <option>arbidol</option>
-              </select>
-
-          </div>
-          <div class="color">
-              <select :value="color" @change="updateColor">
-                <option>Любые</option>
-                <option>black</option>
-                <option>white</option>
-                <option>arbidol</option>
-              </select>
-          </div>
-          <div class="color">
-              <select :value="components" @change="updateComponents">
-                <option>Любые</option>
-                <option>Лед в кубиках</option>
-                <option>Водка</option>
-                <option>Серебряная текила</option>
-                <option>Лаймовый сок</option>
-                <option>Бурбон</option>
-                <option>Абсент</option>
-                <option>Энергетик</option>
-                <option>Коктейльная вишня красная</option>
-                <option>Ананас</option>
-              </select>
-          </div>
-          <div class="button1"><button class="b1"  v-on:click="clearSelect">  Очистить</button>
-          </div>
-      </div>
+<template>
+    <div class="filters">
+       <div class="new-select-style-wpandyou">
+           <select :value="selected" @change="updateSelect">
+                <option v-for="vol in vols">{{vol}}</option>
+          </select>
+       </div>
+       <div class="color">
+            <select :value="color" @change="updateColor">
+                <option v-for="color in colors">{{color}}</option>
+            </select>
+        </div>
+        <div class="color">
+            <select :value="components" @change="updateComponents">
+                <option v-for="comp in component">{{comp}}</option>
+            </select>
+        </div>
+        <div class="button1">
+              <button class="b1"  v-on:click="clearSelect">Очистить</button>
+        </div>
+     </div>
 </template>
 
 <script>
 module.exports = {
   data() {
     return {
-      selected: null,
-      color: null,
-      components: null,
+      vols: [
+        'Любые',
+        'kek',
+        'Безалкогольный',
+        'arbidol',
+      ],
+      colors: [
+        'Любые',
+        'black',
+        'white',
+        'arbidol',
+      ],
+      component: [
+        'Любые',
+        'Лед в кубиках',
+        'Водка',
+        'Серебряная текила',
+        'Лаймовый сок',
+        'Бурбон',
+        'Абсент',
+        'Энергетик',
+        'Коктейльная вишня красная',
+        'Ананас',
+      ],
+      selected() {
+        this.$store.state.vol;
+      },
+      color() {
+        this.$store.state.color;
+      },
+      components() {
+        this.$store.state.comp;
+      },
+
     };
   },
   methods: {
     updateSelect(e) {
       this.$store.commit('updateSelect', e.target.value);
     },
-    clearSelect(e) {
-      e.target.value = 'Любые';
-      this.selected = e.target.value;
-      this.color = e.target.value;
-      this.components = e.target.value;
-      this.$store.commit('updateColor', e.target.value);
-      this.$store.commit('updateSelect', e.target.value);
-      this.$store.commit('updateComponents', e.target.value);
+    clearSelect() {
+      alert('ну и');
+      this.$store.commit('clearSelect');
     },
     updateColor(e) {
       this.$store.commit('updateColor', e.target.value);
@@ -127,7 +138,7 @@ module.exports = {
     overflow: hidden;
     height: 34px;
     background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 180px;
+    width: 120%;
    }
    .search-result{
      height: 100px;
@@ -144,6 +155,6 @@ module.exports = {
     overflow: hidden;
     height: 34px;
     background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 180px;
+    width: 120%;
    }
 </style>
