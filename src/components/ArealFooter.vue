@@ -1,26 +1,21 @@
 <template>
   <div id="footer">
-      <div class="groups">
-            <div class="group desktop">
-                <div class="title">Главное</div>
-                <a v-for="(link,index) in links" :key="index" :href="link.href"> {{link.name}}</a>
-            </div>
-            <div class="group">
-                <div class="title">Полезное</div>
-                <a v-for="(link,index) in links1" :key="index" :href="link.href"> {{link.name}}</a>
-            </div>
-            <div class="group">
-                  <div class="title">Inshaker</div>
-                  <a href="/private_policy">Правила</a>
-                  <a href="/o-proekte">О проекте</a>
-                  <a class="desktop" href="mailto:editorial@inshaker.com">Контакты</a>
-            </div>
-            <div class="languages desktop">
-                    <div class="group">
-                       <div class="title">Выбор языка</div>
-                       <a class="lang-link" v-for="language in languages"> {{language.name}}</a>
-                    </div>
-            </div>
+    <div class="groups">
+      <div class="group desktop">
+        <div class="title">Главное</div>
+        <a v-for="(link,index) in links" :key="index" :href="link.href"> {{link.name}}</a>
+      </div>
+      <div class="group">
+        <div class="title" v-for="(val,index) in title" :key="index">{{val}}
+        <a v-for="(link,index) in links1" :key="index" :href="link.href"> {{link.name}}</a>
+        <a v-for="(ins, index) in inshaker" :key="index" :href="ins.href" :class="ins.class">{{ins.name}}</a></div>
+      </div>
+      <div class="languages desktop">
+        <div class="group">
+          <div class="title">Выбор языка</div>
+          <a class="lang-link" v-for="(language,index) in languages" :key="index"> {{language.name}}</a>
+        </div>
+      </div>
       </div>
   </div>
 </template>
@@ -28,9 +23,29 @@
 module.exports = {
   data() {
     return {
-      languages: [
+      title:[
+        'Полезное',
+        'Inshaker'
+      ],
+      inshaker:[
         {
-          name: 'English UK' },
+          href:'http://localhost:8080/private_policy',
+          name:'Правила',
+          class:''
+        },
+        {
+          href:'http://localhost:8080/o-proekte',
+          name:'О проекте',
+          class:'desktop'
+        },
+        {
+          href:'mailto:editorial@inshaker.com',
+          name:'Контакты',
+          class:''
+        },
+      ],
+      languages: [
+        { name: 'English UK' },
         {
           name: 'Deutsch' },
         {

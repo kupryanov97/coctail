@@ -1,27 +1,32 @@
 <template>
-    <div>
-        <div class="desktop-header"><a class="logo" href="/">
-           <img src="https://ru.inshaker.com/assets/common/logo-4bfdb85cfd6f55be4eeedd5b57c908c01806a711f88622a932aad9abb34fce11.svg"></a>
-              <div class="links">
-                 <a class="link" v-for="(link,index) in links" :key="index" :href="link.href"> {{link.name}}</a>
-             </div>
-       </div>
-       <div class="filter"><p class="selected">Алкогольность:</p><p class="selected">Цвет:</p>
-            <p class="selected">Состав:</p>
-      </div>
-      <noscript>
-        <strong>
-          We're sorry but this project doesn't work properly without JavaScript enabled.
-          Please enable it to continue.
-        </strong>
-      </noscript>
+  <div>
+    <div class="desktop-header"><a class="logo" href="/">
+      <img src="https://ru.inshaker.com/assets/common/logo-4bfdb85cfd6f55be4eeedd5b57c908c01806a711f88622a932aad9abb34fce11.svg"></a>
+        <div class="links">
+          <a class="link" v-for="(link,index) in links" :key="index" :href="link.href"> {{link.name}}</a>
+        </div>
     </div>
+    <div class="filter">
+      <p class="selected" v-for="(val,index) in filter" :key="index">{{val}}</p>
+    </div>
+    <noscript>
+      <strong>
+        We're sorry but this project doesn't work properly without JavaScript enabled.
+        Please enable it to continue.
+      </strong>
+    </noscript>
+  </div>
 </template>
 
 <script>
 module.exports = {
   data() {
     return {
+      filter:[
+        'Алкогольность:',
+        'Цвет:',
+        'Состав:',
+      ],
       links: [
         {
           href: 'https://ru.inshaker.com/',
@@ -50,11 +55,8 @@ module.exports = {
 };
 </script>
   <style>
-.search-input {
-    flex-grow: 1;
-}
 .filter {
-  justify-content: space-around;
+    justify-content: space-around;
     border-radius: 10px;
     width: 20.98%;
     height: 300px;
@@ -66,7 +68,7 @@ module.exports = {
 
 }
 .selected{
-  font: 16px/27px "Times New Roman";
+  font: 15px/27px "Times New Roman";
   margin-top: 12%;
   margin-left: 7%;
 }
@@ -101,10 +103,5 @@ module.exports = {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-}
-body{
-  background-image: url("https://ru.inshaker.com/assets/common/body-bg-bf9928ee232a5a485e2d840111ee4bb2b7affb0509ecc283e6c81d4956ca3038.jpg");
-  height: auto;
-  background-repeat: repeat-y;
 }
   </style>

@@ -1,31 +1,31 @@
 <template class="template">
-    <div class="center">
-          <div class="idkname"
-            v-for="(item, index) in cocktails"
-            :key="index">
-              <div class="main">
-                    <div class="aside">
-                      <a>
-                        <div class="cocktail-item-good"
-                          v-for="(part) in item.parts"
-                          :key="part.part">
-                            <img class="image"
-                              :src="'https://ru.inshaker.com' + part.src"
-                              :title="part.name"
-                              :width="68"
-                              :height="68"/>
-                            <div class="name"><br><span>{{part.name}}</span><br>
-                            </div>
-                        </div>
-                     </a>
-                   </div>
-                   <section>
-                     <img class="size" :src="'https://ru.inshaker.com' + item.src" :height="279"/>
-                     <div class="name-main"> <span>{{item.name}}</span></div>
-                  </section>
-              </div>
-          </div>
+  <div class="center">
+    <div class="idkname"
+      v-for="(item, index) in cocktails"
+      :key="index">
+      <div class="main">
+        <div class="aside">
+          <a>
+            <div class="cocktail-item-good"
+              v-for="(part) in item.parts"
+              :key="part.part">
+              <img class="image"
+                :src="'https://ru.inshaker.com' + part.src"
+                :title="part.name"
+                :width="68"
+                :height="68"
+              />
+                <div class="name"><br><span>{{part.name}}</span><br></div>
+            </div>
+          </a>
+        </div>
+        <section>
+          <img class="size" :src="'https://ru.inshaker.com' + item.src" :height="279"/>
+          <div class="name-main"> <span>{{item.name}}</span></div>
+        </section>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -83,7 +83,7 @@ hr {
   background: white;
   width: 65%;
   height: 100%;
-  margin-top: 3.86%;
+  margin-top: 57.86%;
   margin-left: 22%;
 }
 

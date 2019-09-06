@@ -1,24 +1,24 @@
 <template>
-    <div class="filters">
-       <div class="new-select-style-wpandyou">
-           <select :value="selected" @change="updateSelect">
-                <option v-for="vol in vols">{{vol}}</option>
-          </select>
-       </div>
-       <div class="color">
-            <select :value="color" @change="updateColor">
-                <option v-for="color in colors">{{color}}</option>
-            </select>
-        </div>
-        <div class="color">
-            <select :value="components" @change="updateComponents">
-                <option v-for="comp in component">{{comp}}</option>
-            </select>
-        </div>
-        <div class="button1">
-              <button class="b1"  v-on:click="clearSelect">Очистить</button>
-        </div>
-     </div>
+  <div class="filters">
+    <div class="new-select-style-wpandyou">
+      <select :value="selected" @change="updateSelect">
+        <option v-for="(vol, ind) in vols" :value="vol" :key="ind">{{vol}}</option>
+      </select>
+    </div>
+    <div class="color">
+      <select :value="color" @change="updateColor">
+        <option v-for="(color, ind) in colors" :value="color" :key="ind">{{color}}</option>
+      </select>
+    </div>
+    <div class="color">
+      <select :value="components" @change="updateComponents">
+        <option v-for="(comp, ind) in component" :value="comp" :key="ind">{{comp}}</option>
+      </select>
+    </div>
+    <div class="button1">
+      <button class="b1"  v-on:click="clearSelect" @change="clearSelect">Очистить</button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -49,26 +49,16 @@ module.exports = {
         'Коктейльная вишня красная',
         'Ананас',
       ],
-      selected() {
-        this.$store.state.vol;
-      },
-      color() {
-        this.$store.state.color;
-      },
-      components() {
-        this.$store.state.comp;
-      },
-
     };
   },
   methods: {
+    clearSelect() {
+      this.$store.commit('clearSelect');
+    },
     updateSelect(e) {
       this.$store.commit('updateSelect', e.target.value);
     },
-    clearSelect() {
-      alert('ну и');
-      this.$store.commit('clearSelect');
-    },
+    
     updateColor(e) {
       this.$store.commit('updateColor', e.target.value);
     },
@@ -76,6 +66,17 @@ module.exports = {
       this.$store.commit('updateComponents', e.target.value);
     },
   },
+  computed: {
+    selected() {
+      return this.$store.state.vol;
+    },
+    color() {
+      return this.$store.state.color;
+    },
+    components() {
+      return this.$store.state.comp;
+    },
+  }
 };
 </script>
 <style>
@@ -83,6 +84,7 @@ module.exports = {
   margin-top:-37%;
 }
 .filters{
+  display: flex;
   position: fixed;
   z-index: 0;
   margin-left:27%;
@@ -119,42 +121,47 @@ module.exports = {
     width: 268px;
   margin-top:-24% ;
 }
-.color select{
-    border-radius: 0;
-    background: transparent;
-    height: 44px;
-    border: 0;
-    font-size: 16px;
-    line-height: 1;
-    -webkit-appearance: none;
-    width: 268px;
-  margin-top:-14% ;
-}
-.color {
-    margin-left:-366px ;
-  margin-top:22% ;
-    height: 42px;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 120%;
-   }
-   .search-result{
-     height: 100px;
-    background: white;
-    overflow: hidden;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom: 3px dashed black;
-}
-.new-select-style-wpandyou {
-    margin-left:-366px ;
-  margin-top:-100px ;
-    border: 1px solid #CCC;
-    overflow: hidden;
-    height: 34px;
-    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-    width: 120%;
-   }
+  .color select
+    {
+      border-radius: 0;
+      background: transparent;
+      height: 44px;
+      border: 0;
+      font-size: 16px;
+      line-height: 1;
+      -webkit-appearance: none;
+      width: 268px;
+      margin-top:-14% ;
+    }
+  .color 
+    {
+      margin-left:-135% ;
+      margin-top:22% ;
+      height: 42px;
+      border: 1px solid #CCC;
+      overflow: hidden;
+      height: 34px;
+      background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+      width: 60%;
+    }
+  .search-result
+    {
+      height: 100px;
+      background: white;
+      overflow: hidden;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      border-bottom: 3px dashed black;
+    }
+  .new-select-style-wpandyou 
+    {
+      display: flex;
+      margin-left:-35% ;
+      margin-top:-39% ;
+      border: 1px solid #CCC;
+      overflow: hidden;
+      height: 34px;
+      background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+      width: 60%;
+    }
 </style>
