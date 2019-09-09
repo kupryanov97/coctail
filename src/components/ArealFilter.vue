@@ -1,55 +1,84 @@
 <template>
   <div class="filters">
     <div class="new-select-style-wpandyou">
-      <select :value="selected" @change="updateSelect">
-        <option v-for="(vol, ind) in vols" :value="vol" :key="ind">{{vol}}</option>
+      <select
+        :value="selected"
+        @change="updateSelect"
+      >
+        <option
+          v-for="(vol, ind) in vols"
+          :key="ind"
+          :value="vol"
+        >
+          {{ vol }}
+        </option>
       </select>
     </div>
     <div class="color">
-      <select :value="color" @change="updateColor">
-        <option v-for="(color, ind) in colors" :value="color" :key="ind">{{color}}</option>
+      <select
+        :value="color"
+        @change="updateColor"
+      >
+        <option
+          v-for="(acolor, ind) in colors"
+          :key="ind"
+          :value="acolor"
+        >
+          {{ acolor }}
+        </option>
       </select>
     </div>
     <div class="color">
-      <select :value="components" @change="updateComponents">
-        <option v-for="(comp, ind) in component" :value="comp" :key="ind">{{comp}}</option>
+      <select
+        :value="components"
+        @change="updateComponents"
+      >
+        <option
+          v-for="(comp, ind) in component"
+          :key="ind"
+          :value="comp"
+        >
+          {{ comp }}
+        </option>
       </select>
     </div>
     <div class="button1">
-      <button class="b1"  v-on:click="clearSelect" @change="clearSelect">Очистить</button>
+      <button
+        class="b1"
+        @click="clearSelect"
+        @change="clearSelect"
+      >
+        Очистить
+      </button>
     </div>
   </div>
-</template>
+</template>      
 
 <script>
-module.exports = {
+export default {
   data() {
     return {
-      vols: [
-        'Любые',
-        'kek',
-        'Безалкогольный',
-        'arbidol',
-      ],
-      colors: [
-        'Любые',
-        'black',
-        'white',
-        'arbidol',
-      ],
-      component: [
-        'Любые',
-        'Лед в кубиках',
-        'Водка',
-        'Серебряная текила',
-        'Лаймовый сок',
-        'Бурбон',
-        'Абсент',
-        'Энергетик',
-        'Коктейльная вишня красная',
-        'Ананас',
-      ],
     };
+  },
+  computed: {
+    selected() {
+      return this.$store.state.vol;
+    },
+    vols() {
+      return this.$store.state.vols;
+    },
+    color() {
+      return this.$store.state.color;
+    },
+    colors() {
+      return this.$store.state.colors;
+    },
+    component() {
+      return this.$store.state.component;
+    },
+    components() {
+      return this.$store.state.comp;
+    },
   },
   methods: {
     clearSelect() {
@@ -58,7 +87,7 @@ module.exports = {
     updateSelect(e) {
       this.$store.commit('updateSelect', e.target.value);
     },
-    
+
     updateColor(e) {
       this.$store.commit('updateColor', e.target.value);
     },
@@ -66,32 +95,21 @@ module.exports = {
       this.$store.commit('updateComponents', e.target.value);
     },
   },
-  computed: {
-    selected() {
-      return this.$store.state.vol;
-    },
-    color() {
-      return this.$store.state.color;
-    },
-    components() {
-      return this.$store.state.comp;
-    },
-  }
 };
 </script>
 <style>
-.filter11{
-  margin-top:-37%;
-}
-.filters
-  {
+  .filter11 {
+    margin-top: -37%;
+  }
+
+  .filters {
     position: fixed;
     z-index: 0;
-    margin-left:27%;
-    margin-top:8.7%;
+    margin-left: 27%;
+    margin-top: 8.7%;
   }
-.b1 
-  {
+
+  .b1 {
     background: -moz-linear-gradient(rgb(227, 255, 69), #EBFFFF);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
@@ -102,19 +120,18 @@ module.exports = {
     border-radius: 50px;
     border: 1px solid #666;
   }
-.button1
-  {
+
+  .button1 {
     width: 150px;
     font: 18px/27px "Times New Roman";
-    line-height:29px;
+    line-height: 29px;
     text-align: center;
     height: 154px;
-    margin-left:-249%;
+    margin-left: -249%;
     margin-top: 20px;
   }
-.new-select-style-wpandyou select
-{
-  border-radius: 0;
+
+  .new-select-style-wpandyou select {
     background: transparent;
     height: 44px;
     border: 0;
@@ -122,48 +139,46 @@ module.exports = {
     line-height: 1;
     -webkit-appearance: none;
     width: 268px;
-  margin-top:-24% ;
-}
-  .color select
-    {
-      border-radius: 0;
-      background: transparent;
-      height: 44px;
-      border: 0;
-      font-size: 16px;
-      line-height: 1;
-      -webkit-appearance: none;
-      width: 268px;
-      margin-top:-14% ;
-    }
-  .color 
-    {
-      margin-left:-366px ;
-      margin-top:22% ;
-      height: 42px;
-      border: 1px solid #CCC;
-      overflow: hidden;
-      height: 34px;
-      background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-      width: 120%;
-    }
-  .search-result
-    {
-      height: 100px;
-      background: white;
-      overflow: hidden;
-      border-bottom-left-radius: 7px;
-      border-bottom-right-radius: 7px;
-      border-bottom: 3px dashed black;
-    }
-  .new-select-style-wpandyou 
-    {
-      margin-left:-366px ;
-      margin-top:-100px ;
-      border: 1px solid #CCC;
-      overflow: hidden;
-      height: 34px;
-      background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-      width: 120%;
-    }
+    margin-top: -24%;
+  }
+
+  .color select {
+    background: transparent;
+    height: 44px;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+    margin-top: -14%;
+  }
+
+  .color {
+    margin-left: -366px;
+    margin-top: 22%;
+    height: 42px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 120%;
+  }
+
+  .search-result {
+    height: 100px;
+    background: white;
+    overflow: hidden;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom: 3px dashed black;
+  }
+
+  .new-select-style-wpandyou {
+    margin-left: -366px;
+    margin-top: -100px;
+    border: 1px solid #CCC;
+    overflow: hidden;
+    height: 34px;
+    background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
+    width: 120%;
+  }
 </style>
