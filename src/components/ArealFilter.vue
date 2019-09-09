@@ -83,14 +83,15 @@ module.exports = {
 .filter11{
   margin-top:-37%;
 }
-.filters{
-  display: flex;
-  position: fixed;
-  z-index: 0;
-  margin-left:27%;
-  margin-top:8.7%;
-}
-.b1 {
+.filters
+  {
+    position: fixed;
+    z-index: 0;
+    margin-left:27%;
+    margin-top:8.7%;
+  }
+.b1 
+  {
     background: -moz-linear-gradient(rgb(227, 255, 69), #EBFFFF);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
@@ -100,17 +101,19 @@ module.exports = {
     -webkit-border-radius: 5px;
     border-radius: 50px;
     border: 1px solid #666;
-   }
-.button1{
-  width: 150px;
-  font: 18px/27px "Times New Roman";
-  line-height:29px;
-  text-align: center;
-  height: 154px;
-  margin-left:-249%;
-  margin-top: 20px;
-}
-.new-select-style-wpandyou select{
+  }
+.button1
+  {
+    width: 150px;
+    font: 18px/27px "Times New Roman";
+    line-height:29px;
+    text-align: center;
+    height: 154px;
+    margin-left:-249%;
+    margin-top: 20px;
+  }
+.new-select-style-wpandyou select
+{
   border-radius: 0;
     background: transparent;
     height: 44px;
@@ -135,14 +138,14 @@ module.exports = {
     }
   .color 
     {
-      margin-left:-135% ;
+      margin-left:-366px ;
       margin-top:22% ;
       height: 42px;
       border: 1px solid #CCC;
       overflow: hidden;
       height: 34px;
       background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-      width: 60%;
+      width: 120%;
     }
   .search-result
     {
@@ -155,13 +158,12 @@ module.exports = {
     }
   .new-select-style-wpandyou 
     {
-      display: flex;
-      margin-left:-35% ;
-      margin-top:-39% ;
+      margin-left:-366px ;
+      margin-top:-100px ;
       border: 1px solid #CCC;
       overflow: hidden;
       height: 34px;
       background: url(http://wpandyou.ru/wp-content/uploads/2013/01/down_arrow_select.jpg) no-repeat right rgb(255, 255, 255);
-      width: 60%;
+      width: 120%;
     }
 </style>

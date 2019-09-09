@@ -1,16 +1,8 @@
 export default {
   list: state => {
     state.list = state.temp;
-    if (state.vol === 'Любые' && state.color !== 'Любые') {
-      console.log('1');
-      state.list = state.list.filter(item => item.color === state.color);
-    }
-    if (state.color === 'Любые' && state.vol !== 'Любые') {
-      console.log('2');
-      state.list = state.temp.filter(item => item.gradus === state.vol);
-    }
     if (state.color !== 'Любые') {
-      state.list = state.temp.filter(item => item.color === state.color);
+      state.list = state.list.filter(item => item.color === state.color);
     }
     if (state.vol !== 'Любые') {
       state.list = state.list.filter(item => item.gradus === state.vol);
@@ -22,12 +14,9 @@ export default {
       });
     }
     if (state.list.length === 0) {
-      alert('По вашему запросу ничего нейдено');
+      alert('По вашему запросу ничего не найдено');
       return state.temp;
     }
-    alert(`найдено:${state.list.length} рецептов`);
-    state.empty = state.list;
-    console.log('111');
     return state.list;
   },
 };

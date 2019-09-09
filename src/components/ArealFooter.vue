@@ -6,9 +6,12 @@
         <a v-for="(link,index) in links" :key="index" :href="link.href"> {{link.name}}</a>
       </div>
       <div class="group">
-        <div class="title" v-for="(val,index) in title" :key="index">{{val}}
+        <div class="title">Полезное</div>
         <a v-for="(link,index) in links1" :key="index" :href="link.href"> {{link.name}}</a>
-        <a v-for="(ins, index) in inshaker" :key="index" :href="ins.href" :class="ins.class">{{ins.name}}</a></div>
+      </div>
+      <div class="group">
+        <div class="title">Inshaker</div>
+        <a v-for="(ins, index) in inshaker" :key="index" :href="ins.href" :class="ins.class">{{ins.name}}</a>
       </div>
       <div class="languages desktop">
         <div class="group">

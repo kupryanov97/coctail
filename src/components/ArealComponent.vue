@@ -15,12 +15,12 @@
                 :width="68"
                 :height="68"
               />
-                <div class="name"><br><span>{{part.name}}</span><br></div>
+              <div class="name"><br><span>{{part.name}}</span><br></div>
             </div>
           </a>
         </div>
         <section>
-          <img class="size" :src="'https://ru.inshaker.com' + item.src" :height="279"/>
+          <img class="size" :src="'https://ru.inshaker.com' + item.src"/>
           <div class="name-main"> <span>{{item.name}}</span></div>
         </section>
       </div>

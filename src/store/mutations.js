@@ -1,6 +1,5 @@
 export default {
   updateSelect(state, message) {
-    console.log(message);
     state.vol = message;
   },
   updateColor(state, message1) {

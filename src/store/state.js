@@ -7,5 +7,4 @@ export default {
   comp: 'Любые',
   temp: mock.slice(0, 50),
   temp1: [],
-  empty: '',
 };

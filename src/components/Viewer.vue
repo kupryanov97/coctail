@@ -38,7 +38,7 @@ export default {
 div.component{
   border-radius: 10px;
   width: 55%;
-overflow:auto;
+  overflow:auto;
   margin-top: 1.86%;
   margin-left: 24%;
   background: white
